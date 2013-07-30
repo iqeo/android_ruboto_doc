@@ -178,39 +178,74 @@ function SHA1 (msg) {
   return temp.toLowerCase();
  }
 
+/**
+
+HTML escape...
+
+DOM Text Node
+
+The "proper" way to escape text is to use the DOM function document.createTextNode. This doesn't actually escape the text; it just tells the browser to create a text element, which is inherently unparsed. You have to be willing to use the DOM for this method to work, however: that is, you have use methods such as appendChild, as opposed to the innerHTML property and similar. This would fill an element with ID an-element with text, which would not be parsed as (X)HTML:
+
+var textNode = document.createTextNode("<strong>This won't be bold.  The tags " + "will be visible.</strong>");
+document.getElementById('an-element').appendChild(textNode);
+
+  <div style="border: 1px solid #DDDDDD">
+  <button>Java</button>
+  <button>Ruboto</button>
+  <button onclick="window.location.href='mailto:gerard.fowley@iqeo.net?subject=test1234';">Edit by email</button>
+  </div>
+
+
+**/
+ 
 var pres = document.getElementsByTagName("pre");
 var filename_prefix = window.location.pathname.replace(/^\//,"").replace(/[\/\.]/g,"_") + "_";
 
 for (var i = 0 ; i < pres.length; i++) {
   var pre = pres[i];
   var java_checksum = SHA1(pre.innerHTML);
-  var filename = filename_prefix + java_checksum
+  var filename = filename_prefix + java_checksum + ".txt"
   var java_text = pre.innerHTML
-  pre.innerHTML = "http://iqeo.net/android_ruboto_doc/"+filename
+  var ruby_url = "http://android-ruboto-doc.iqeo.net/docs/" + filename
+  pre.innerHTML = ruby_url
   GM_xmlhttpRequest({
     method:  "GET",
-    url:     "http://iqeo.net/android_ruboto_doc/"+filename,
+    url:     ruby_url,
     data:    "",
-    context: { pre: pre, java_text: java_text },
+    context: { pre: pre, filename: filename, java_text: java_text },
     onload:  function(response) {
+      var pre = response.context.pre;
+      var div = document.createElement("div");
+      div.setAttribute("style","background: none repeat scroll 0 0 #F7F7F7; border: 1px solid #DDDDDD; margin: 0 0 0.5em; padding: 0.5em 1em;")
+      pre.parentElement.insertBefore(div,pre);
       if ( response.status == 200 ) {
-        // change pre contents to ruby
+        // display ruboto content
         var ruby_text = response.responseText; //todo: html escape this ?
-        var pre = response.context.pre;
         pre.innerHTML = ruby_text;
-        // button to display java
+        // java button
         var java_button = document.createElement("button");
-        java_button.appendChild(document.createTextNode("Java"));
+        java_button.appendChild(document.createTextNode("Original"));
         java_button.setAttribute("alt",response.context.java_text); //todo: html escape this ?
-        java_button.setAttribute("onclick","this.nextElementSibling.nextElementSibling.innerHTML=this.getAttribute('alt');");
-        pre.parentNode.insertBefore(java_button,pre);
-        // button to display ruby
+        java_button.setAttribute("onclick","this.parentElement.nextElementSibling.innerHTML=this.getAttribute('alt');");
+        div.appendChild(java_button);
+        // ruby button
         var ruby_button = document.createElement("button");
         ruby_button.appendChild(document.createTextNode("Ruboto"));
         ruby_button.setAttribute("alt",ruby_text); //todo: html escape this ?
-        ruby_button.setAttribute("onclick","this.nextElementSibling.innerHTML=this.getAttribute('alt');");
-        pre.parentNode.insertBefore(ruby_button,pre);
+        ruby_button.setAttribute("onclick","this.parentElement.nextElementSibling.innerHTML=this.getAttribute('alt');");
+        div.appendChild(ruby_button);
+        // edit button
+        var edit_button = document.createElement("button");
+        edit_button.appendChild(document.createTextNode("Contribute edits by email..."));
+        edit_button.setAttribute("onclick","window.location.href='mailto:android-ruboto-doc@iqeo.net?subject=doc:" + filename + "';");
+        div.appendChild(edit_button);
       }
+      var about = document.createElement("a");
+      about.appendChild(document.createTextNode("About"));
+      about.setAttribute("href","http://android-ruboto-doc.iqeo.net");
+      about.setAttribute("target","_blank");
+      div.appendChild(about)
     }
   });
 }
+

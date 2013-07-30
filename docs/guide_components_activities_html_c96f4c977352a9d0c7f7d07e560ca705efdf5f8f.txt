@@ -1,0 +1,9 @@
+# when Activity is a Java class...
+
+intent = android::content::Intent.new
+intent.setClassName $package_name, 'fully.qualified.classname.SignInActivity'
+startActivity intent
+ 
+# for Ruby classes and other options see:
+# https://github.com/ruboto/ruboto/wiki/Using-Activities-and-Intents
+# https://github.com/ruboto/ruboto/blob/master/test/activity/navigation_activity.rb
