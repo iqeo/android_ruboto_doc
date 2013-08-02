@@ -180,24 +180,38 @@ function SHA1 (msg) {
 
 /**
 
-HTML escape...
+  TODO: HTML escape...
 
-DOM Text Node
+  DOM Text Node
 
-The "proper" way to escape text is to use the DOM function document.createTextNode. This doesn't actually escape the text; it just tells the browser to create a text element, which is inherently unparsed. You have to be willing to use the DOM for this method to work, however: that is, you have use methods such as appendChild, as opposed to the innerHTML property and similar. This would fill an element with ID an-element with text, which would not be parsed as (X)HTML:
+  The "proper" way to escape text is to use the DOM function document.createTextNode. This doesn't actually escape the text; it just tells the browser to create a text element, which is inherently unparsed. You have to be willing to use the DOM for this method to work, however: that is, you have use methods such as appendChild, as opposed to the innerHTML property and similar. This would fill an element with ID an-element with text, which would not be parsed as (X)HTML:
 
-var textNode = document.createTextNode("<strong>This won't be bold.  The tags " + "will be visible.</strong>");
-document.getElementById('an-element').appendChild(textNode);
+  var textNode = document.createTextNode("<strong>This won't be bold.  The tags " + "will be visible.</strong>");
+  document.getElementById('an-element').appendChild(textNode);
 
-  <div style="border: 1px solid #DDDDDD">
-  <button>Java</button>
-  <button>Ruboto</button>
-  <button onclick="window.location.href='mailto:gerard.fowley@iqeo.net?subject=test1234';">Edit by email</button>
+  TODO: JS to create list of links like this from tabtest.html...
+  
+  <div>
+  <ul class="ard-nav">
+  <li><a href="#" class="ard-nav-current"
+        onclick="this.setAttribute('class','ard-nav-current');this.parentElement.nextElementSibling.firstElementChild.removeAttribute('class');">Original</a></li>
+  <li><a href="#"
+        onclick="this.setAttribute('class','ard-nav-current');this.parentElement.previousElementSibling.firstElementChild.removeAttribute('class');">Ruboto</a></li>
+  </ul>
   </div>
-
 
 **/
  
+var style = document.createElement("style");
+style.innerHTML = [
+  ".ard-nav { padding: 3px 0; margin: 0; border-bottom: 1px solid #DDDDDD; font: bold 12px Verdana, sans-serif; }",
+  ".ard-nav li { list-style: none; margin: 0; display: inline; }",
+  ".ard-nav li a { padding: 3px 0.5em; border: 1px solid #DDDDDD; border-bottom: none; background: white; text-decoration: none; }",
+  ".ard-nav li a.ard-nav-current { background: #F7F7F7; border-bottom: 1px solid #F7F7F7; outline: 0; }",
+  ".ard-nav li a:hover { color: #000; }"
+].join('\n');
+document.head.appendChild(style);
+
 var pres = document.getElementsByTagName("pre");
 var filename_prefix = window.location.pathname.replace(/^\//,"").replace(/[\/\.]/g,"_") + "_";
 

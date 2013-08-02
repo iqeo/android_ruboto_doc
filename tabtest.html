@@ -1,0 +1,27 @@
+<html>
+
+<head>
+<style type="text/css">
+.ard-nav { padding: 3px 0; margin: 0; border-bottom: 1px solid #DDDDDD; font: bold 12px Verdana, sans-serif; }
+.ard-nav li { list-style: none; margin: 0; display: inline; }
+.ard-nav li a { padding: 3px 0.5em; border: 1px solid #DDDDDD; border-bottom: none; background: white; text-decoration: none; }
+.ard-nav li a.ard-nav-current { background: #F7F7F7; border-bottom: 1px solid #F7F7F7; outline: 0; }
+.ard-nav li a:hover { color: #000; }
+.content { background: none repeat scroll 0 0 #F7F7F7; border: 1px solid #DDDDDD; border-top: none; margin: 0 0 1em; overflow: auto; padding: 1em; }
+</style>
+</head>
+
+<body>
+<div>
+<ul class="ard-nav">
+<li><a href="#" class="ard-nav-current" onclick="this.setAttribute('class','ard-nav-current');this.parentElement.nextElementSibling.firstElementChild.removeAttribute('class');">Original</a></li>
+<li><a href="#"                 onclick="this.setAttribute('class','ard-nav-current');this.parentElement.previousElementSibling.firstElementChild.removeAttribute('class');">Ruboto</a></li>
+</ul>
+</div>
+<pre class="content">
+This is the content
+and some more...
+the end!
+</pre>
+</body>
+</html>
