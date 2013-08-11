@@ -180,26 +180,19 @@ function SHA1 (msg) {
 
 /**
 
-  TODO: HTML escape...
+  TODO: HTML escape... via DOM Text Node
+        
+        The "proper" way to escape text is to use the DOM function document.createTextNode. This doesn't actually escape the text; it just tells the browser to create a text element, which is inherently unparsed. You have to be willing to use the DOM for this method to work, however: that is, you have use methods such as appendChild, as opposed to the innerHTML property and similar. This would fill an element with ID an-element with text, which would not be parsed as (X)HTML:
+    
+          var textNode = document.createTextNode("<strong>This won't be bold.  The tags " + "will be visible.</strong>");
+          document.getElementById('an-element').appendChild(textNode);
 
-  DOM Text Node
-
-  The "proper" way to escape text is to use the DOM function document.createTextNode. This doesn't actually escape the text; it just tells the browser to create a text element, which is inherently unparsed. You have to be willing to use the DOM for this method to work, however: that is, you have use methods such as appendChild, as opposed to the innerHTML property and similar. This would fill an element with ID an-element with text, which would not be parsed as (X)HTML:
-
-  var textNode = document.createTextNode("<strong>This won't be bold.  The tags " + "will be visible.</strong>");
-  document.getElementById('an-element').appendChild(textNode);
-
-  TODO: JS to create list of links like this from tabtest.html...
+  TODO: work with http & https
+  TODO: limit path at developer.android.com
+  TODO: 'edit/contribute' list item (not like a tab)
+  TODO: 'about list item' (not like a tab)
+  TODO: test with Firefox, Chrome, IE
   
-  <div>
-  <ul class="ard-nav">
-  <li><a href="#" class="ard-nav-current"
-        onclick="this.setAttribute('class','ard-nav-current');this.parentElement.nextElementSibling.firstElementChild.removeAttribute('class');">Original</a></li>
-  <li><a href="#"
-        onclick="this.setAttribute('class','ard-nav-current');this.parentElement.previousElementSibling.firstElementChild.removeAttribute('class');">Ruboto</a></li>
-  </ul>
-  </div>
-
 **/
  
 var style = document.createElement("style");
@@ -229,36 +222,46 @@ for (var i = 0 ; i < pres.length; i++) {
     context: { pre: pre, filename: filename, java_text: java_text },
     onload:  function(response) {
       var pre = response.context.pre;
-      var div = document.createElement("div");
-      div.setAttribute("style","background: none repeat scroll 0 0 #F7F7F7; border: 1px solid #DDDDDD; margin: 0 0 0.5em; padding: 0.5em 1em;")
-      pre.parentElement.insertBefore(div,pre);
+      // style change for pre...{ border-top: none; }
+      pre.setAttribute("style","border-top: none;");     
+      // tabs
+      var tabs = document.createElement("ul");
+      tabs.setAttribute("class","ard-nav");
+      pre.parentElement.insertBefore(tabs,pre);
       if ( response.status == 200 ) {
         // display ruboto content
         var ruby_text = response.responseText; //todo: html escape this ?
         pre.innerHTML = ruby_text;
-        // java button
-        var java_button = document.createElement("button");
-        java_button.appendChild(document.createTextNode("Original"));
-        java_button.setAttribute("alt",response.context.java_text); //todo: html escape this ?
-        java_button.setAttribute("onclick","this.parentElement.nextElementSibling.innerHTML=this.getAttribute('alt');");
-        div.appendChild(java_button);
-        // ruby button
-        var ruby_button = document.createElement("button");
-        ruby_button.appendChild(document.createTextNode("Ruboto"));
-        ruby_button.setAttribute("alt",ruby_text); //todo: html escape this ?
-        ruby_button.setAttribute("onclick","this.parentElement.nextElementSibling.innerHTML=this.getAttribute('alt');");
-        div.appendChild(ruby_button);
+        // ruby tab
+        var ruby_tab_link = document.createElement("a");
+        ruby_tab_link.appendChild(document.createTextNode("Ruboto"));
+        ruby_tab_link.setAttribute("href","#");
+        ruby_tab_link.setAttribute("class","ard-nav-current");
+        ruby_tab_link.setAttribute("alt",ruby_text); //todo: html escape this ?
+        ruby_tab_link.setAttribute("onclick","this.setAttribute('class','ard-nav-current');this.parentElement.nextElementSibling.firstElementChild.removeAttribute('class');this.parentElement.parentElement.nextElementSibling.innerHTML=this.getAttribute('alt');return false;");
+        var ruby_tab = document.createElement("li");
+        ruby_tab.appendChild(ruby_tab_link);
+        tabs.appendChild(ruby_tab);
+        // java tab
+        var java_tab_link = document.createElement("a");
+        java_tab_link.appendChild(document.createTextNode("Java"));
+        java_tab_link.setAttribute("href","#");
+        java_tab_link.setAttribute("alt",response.context.java_text); //todo: html escape this ?
+        java_tab_link.setAttribute("onclick","this.setAttribute('class','ard-nav-current');this.parentElement.previousElementSibling.firstElementChild.removeAttribute('class');this.parentElement.parentElement.nextElementSibling.innerHTML=this.getAttribute('alt');return false;");
+        var java_tab = document.createElement("li");
+        java_tab.appendChild(java_tab_link);
+        tabs.appendChild(java_tab);
         // edit button
-        var edit_button = document.createElement("button");
-        edit_button.appendChild(document.createTextNode("Contribute edits by email..."));
-        edit_button.setAttribute("onclick","window.location.href='mailto:android-ruboto-doc@iqeo.net?subject=doc:" + filename + "';");
-        div.appendChild(edit_button);
+        //var edit_button = document.createElement("button");
+        //edit_button.appendChild(document.createTextNode("Contribute edits by email..."));
+        //edit_button.setAttribute("onclick","window.location.href='mailto:android-ruboto-doc@iqeo.net?subject=doc:" + filename + "';");
+        //div.appendChild(edit_button);
       }
-      var about = document.createElement("a");
-      about.appendChild(document.createTextNode("About"));
-      about.setAttribute("href","http://android-ruboto-doc.iqeo.net");
-      about.setAttribute("target","_blank");
-      div.appendChild(about)
+      //var about = document.createElement("a");
+      //about.appendChild(document.createTextNode("About"));
+      //about.setAttribute("href","http://android-ruboto-doc.iqeo.net");
+      //about.setAttribute("target","_blank");
+      //div.appendChild(about)
     }
   });
 }
