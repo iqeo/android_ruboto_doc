@@ -4,7 +4,7 @@
 // @grant       GM_xmlhttpRequest
 // @version     0.1
 // @namespace   https://android-ruboto-doc.iqeo.net
-// @require     http://android-ruboto-doc.iqeo.net:8080/android_ruboto_doc.functions.js
+// @require     http://android-ruboto-doc.iqeo.net/android_ruboto_doc.functions.js
 // //@icon        https://android-ruboto-doc.iqeo.net/icon.png
 // @updateURL   https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js
 // @downloadURL https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js
@@ -19,19 +19,18 @@
 /**
 
   TODO: handle 50x errors and non-responsive server - responseText may be null ??
-  TODO: + iqeo site index.html, header & footer
-  TODO: + integrate with nginx/unicorn on server
-  TODO: + + remove port 8080 from ruby_host_url and metadata block
-  TODO: + + SSL cert at https://android-ruboto-doc.iqeo.net
-  TODO: + + + put icon (32x32) in place at https://android-ruboto-doc.iqeo.net/icon.png
-  TODO: + + + test userscript update & download
+  TODO: iqeo site index.html, header & footer
+  TODO: SSL cert at https://android-ruboto-doc.iqeo.net
+  TODO: + put icon (32x32) in place at https://android-ruboto-doc.iqeo.net/icon.png
+  TODO: + test userscript update & download
   TODO: test install+update+download+operation with Firefox, Chrome, IE?
-  TODO: set version number and announced
+  TODO: set version number and announce
   TODO: how to handle same repo for code & wiki ? - security issues ?
-  
+  TODO: prevent access to .git directories
+
 **/
 
-var ruby_host_url = "http://android-ruboto-doc.iqeo.net:8080";
+var ruby_host_url = "http://android-ruboto-doc.iqeo.net";
 
 var style = document.createElement( "style" );
 style.innerHTML = [
