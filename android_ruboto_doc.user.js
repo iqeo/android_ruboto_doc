@@ -18,7 +18,6 @@
 
 /**
 
-  TODO: handle 50x errors and non-responsive server - responseText may be null ??
   TODO: iqeo site index.html, header & footer
   TODO: SSL cert at https://android-ruboto-doc.iqeo.net
   TODO: + put icon (32x32) in place at https://android-ruboto-doc.iqeo.net/icon.png
@@ -35,11 +34,11 @@ var ruby_host_url = "http://android-ruboto-doc.iqeo.net";
 var style = document.createElement( "style" );
 style.innerHTML = [
   ".ard { padding: 3px 0; margin: 0; border-bottom: 1px solid #DDDDDD; font: bold 12px Verdana, sans-serif; }",
+  ".ard li.ard-msg { padding: 3px 0.5em; font: italic 12px Verdana, sans-serif; color: #555555; }",
   ".ard li { list-style: none; margin: 0; display: inline; }",
   ".ard li a.ard-tab { padding: 3px 0.5em; border: 1px solid #DDDDDD; border-bottom: none; background: white; text-decoration: none; }",
   ".ard li a.ard-current { background: #F7F7F7; border-bottom: 1px solid #F7F7F7; outline: 0; }",
-  ".ard li a.ard-link { padding: 3px 0.5em; font: 12px Verdana, sans-serif; }",
-  ".ard li a:hover { color: #000; }"
+  ".ard li a.ard-link { padding: 3px 0.5em; font: 12px Verdana, sans-serif; }"
 ].join('\n');
 document.head.appendChild( style );
 
@@ -131,9 +130,10 @@ for ( var i = 0 ; i < pres.length; i++ ) {
           }
           break;        
         default:
-          var create_item = document.createElement( "li" );
-          create_item.appendChild( document.createTextNode( "Ruboto documentation curently unavailable" ) );
-          tabs.appendChild( create_item );
+          var problem_item = document.createElement( "li" );
+          problem_item.appendChild( document.createTextNode( "Ruboto documentation curently unavailable." ) );
+          problem_item.setAttribute( "class", "ard-msg" );
+          tabs.appendChild( problem_item );
       }
       var about_link = document.createElement( "a" );
       about_link.appendChild( document.createTextNode( "About" ));
