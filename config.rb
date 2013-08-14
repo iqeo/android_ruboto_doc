@@ -7,5 +7,5 @@ Gollum::Markup.register(:txt, "Plain Text") do |content|
   "\n<pre>\n#{content}\n<pre>\n"
 end
 
+# make plain text the default
 Precious::App.set(:default_markup, :txt)
-#Precious::App.set(:wiki_options, {:universal_toc => false})
