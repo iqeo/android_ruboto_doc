@@ -2,13 +2,13 @@
 // @name        Android Ruboto Documentation
 // @description Ruboto code examples for Android developer documentation. Displayed in context while browsing http://developer.android.com.
 // @grant       GM_xmlhttpRequest
-// @version     0.3
+// @version     0.4
 // @namespace   https://android-ruboto-doc.iqeo.net
 // //@require-NOT     http://android-ruboto-doc.iqeo.net/android_ruboto_doc.functions.js
 // @icon        https://android-ruboto-doc.iqeo.net/icon.png
 // @updateURL   https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js
 // @downloadURL https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js
-// @match       *://android-ruboto-doc.iqeo.net/*
+// @match-NOT       *://android-ruboto-doc.iqeo.net/*
 // @match       *://developer.android.com/develop/*
 // @match       *://developer.android.com/training/*
 // @match       *://developer.android.com/guide/*
