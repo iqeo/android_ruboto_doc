@@ -4,10 +4,12 @@ upstream unicorn {
 }
 
 server {
-  server_name         android-ruboto-doc.iqeo.net;
-  root                /home/ard/android_ruboto_doc;
-  listen              80;
-  listen              443 ssl;
+  server_name android-ruboto-doc.iqeo.net;
+  root        /home/ard/android_ruboto_doc;
+  listen      80;
+  listen      443 ssl;
+
+  rewrite     ^/wiki(/*)$ / break;
 
   try_files $uri/index.html $uri @unicorn;
   location @unicorn {

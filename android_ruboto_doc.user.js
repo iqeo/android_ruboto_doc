@@ -17,13 +17,11 @@
 // @match       *://developer.android.com/google/*
 // ==/UserScript==
 
-
 /**
 
+  TODO: prevent access to .git directories
   TODO: iqeo site home page (index.html), wiki headers & footers
   TODO: site home page - description, script installation, project license, doc CC license, doc guidelines
-  TODO: disable wiki home page ?
-  TODO: prevent access to .git directories
   TODO: set version number and announce
   TODO: fails in Chrome & TamperMonkey - response.context is undefined (can't read java_pre) at line 235)
   TODO: + context may only be a string now in Chrome ? - now need to pack and unpack values or serialize ?
