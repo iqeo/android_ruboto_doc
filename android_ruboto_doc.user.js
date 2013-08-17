@@ -2,10 +2,10 @@
 // @name        Android Ruboto Documentation
 // @description Ruboto code examples for Android developer documentation. Displayed in context while browsing http://developer.android.com.
 // @grant       GM_xmlhttpRequest
-// @version     0.1
+// @version     0.2
 // @namespace   https://android-ruboto-doc.iqeo.net
 // @require     http://android-ruboto-doc.iqeo.net/android_ruboto_doc.functions.js
-// //@icon        https://android-ruboto-doc.iqeo.net/icon.png
+// @icon        https://android-ruboto-doc.iqeo.net/icon.png
 // @updateURL   https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js
 // @downloadURL https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js
 // @match       *://developer.android.com/develop/*
@@ -18,14 +18,12 @@
 
 /**
 
-  TODO: iqeo site index.html, header & footer
-  TODO: SSL cert at https://android-ruboto-doc.iqeo.net
-  TODO: + put icon (32x32) in place at https://android-ruboto-doc.iqeo.net/icon.png
-  TODO: + test userscript update & download
   TODO: test install+update+download+operation with Firefox, Chrome, IE?
-  TODO: set version number and announce
-  TODO: how to handle same repo for code & wiki ? - security issues ?
+  TODO: iqeo site home page (index.html), wiki headers & footers
+  TODO: site home page - description, script installation, project license, doc CC license, doc guidelines
+  TODO: disable wiki home page ?
   TODO: prevent access to .git directories
+  TODO: set version number and announce
 
 **/
 
