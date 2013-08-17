@@ -9,8 +9,10 @@ server {
   listen      80;
   listen      443 ssl;
 
-  rewrite     ^/wiki(/*)$ / break;
-
+  location = /wiki  { return 301 /; }
+  location = /wiki/ { return 301 /; }
+  location   /.git/ { return 301 /; }
+	
   try_files $uri/index.html $uri @unicorn;
   location @unicorn {
     proxy_set_header X-Forwarded-Proto $scheme;

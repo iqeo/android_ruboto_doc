@@ -19,7 +19,6 @@
 
 /**
 
-  TODO: prevent access to .git directories
   TODO: iqeo site home page (index.html), wiki headers & footers
   TODO: site home page - description, script installation, project license, doc CC license, doc guidelines
   TODO: set version number and announce
