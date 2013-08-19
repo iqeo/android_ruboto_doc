@@ -26,7 +26,10 @@ As this project develops it may be necessary to update the user-script. This is 
 
 ## Usage
 
-![without script](/images/no_script.png)
+![Before script](images/before_script.png)
+![No doc](images/script_no_doc.png)
+![Ruboto doc](images/script_ruboto_doc.png)
+![Java doc](images/script_java_doc.png)
 
 ## Documentation Guidelines
 
