@@ -46,10 +46,4 @@ If author attribution is desired, provide the author's name and/or email address
 
 ## Project License
 
-
-
-
-
-
-
-
+This project (not including contributed documentation) is licensed under [GPLv3](http://www.gnu.org/licenses/gpl.html).
