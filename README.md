@@ -1,6 +1,6 @@
 # Android Ruboto Documentation
 
-Ruboto code examples for Android developer documentation. Presented in context while browsing Google Android developer documentation at http://developer.android.com.
+[Ruboto](http://ruboto.org/) code examples for [Google Android developer documentation](http://developer.android.com/develop). Presented in context while browsing Google Android developer documentation at http://developer.android.com/develop.
 
 ## Description
 
