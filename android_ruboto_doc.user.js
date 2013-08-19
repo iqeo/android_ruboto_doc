@@ -5,10 +5,10 @@
 // @version     0.4
 // @namespace   https://android-ruboto-doc.iqeo.net
 // //@require-NOT     http://android-ruboto-doc.iqeo.net/android_ruboto_doc.functions.js
-// @icon        https://android-ruboto-doc.iqeo.net/icon.png
+// @icon        https://android-ruboto-doc.iqeo.net/images/icon.png
 // @updateURL   https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js
 // @downloadURL https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js
-// @match-NOT       *://android-ruboto-doc.iqeo.net/*
+// //@match-NOT       *://android-ruboto-doc.iqeo.net/*
 // @match       *://developer.android.com/develop/*
 // @match       *://developer.android.com/training/*
 // @match       *://developer.android.com/guide/*
