@@ -40,10 +40,11 @@ Ideally, Ruboto code examples...
 
 ## Documentation License
 
-Create Commons license....
+Contributed documentation is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US)
+![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
+
 
 If author attribution is desired, provide the author's name and/or email address in a comment ```#...``` at the end of the example.
-
 
 ## Project License
 
