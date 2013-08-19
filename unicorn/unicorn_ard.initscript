@@ -14,7 +14,7 @@ set -e
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/home/ard/android_ruboto_doc
 PID=/home/ard/tmp/pids/unicorn.pid
-CMD="cd /home/ard/android_ruboto_doc; bundle exec unicorn -D -c /home/ard/android_ruboto_doc/unicorn_config.rb -E production"
+CMD="cd ${APP_ROOT}; bundle exec unicorn -D -c ${APP_ROOT}/unicorn/unicorn_config.rb -E production"
 AS_USER=ard
 set -u
 
