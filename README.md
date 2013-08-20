@@ -26,14 +26,41 @@ As this project develops it may be necessary to update the user-script. This is 
 
 ## Usage
 
+Browse to the Google Android developer documentation at http://developer.android.com/develop.
 
+### Original examples
+
+With this script not installed or disabled, examples in the documentation are normally presented:
+
+![Before script](images/before_script.png)
+
+### Examples without Ruboto doc 
+With this script active, examples will look like this when there is no corresponding Ruboto example:
+
+![No doc](images/script_no_doc.png)
+
+Click the 'create' link to create a Ruboto example at the Android Ruboto Documentation wiki:
+Refresh the orginal developer.android.com page to see the newly created Ruboto example.
+
+### Examples with Ruboto doc
+With this script active, Ruboto examples are presented on the Ruboto tab:
+
+![Ruboto doc](images/script_ruboto_doc.png)
+
+Click the 'Edit' link to edit the Ruboto example at the Android Ruboto Documentation wiki:
+Refresh the orginal developer.android.com page to see the updated Ruboto example.
+
+### Original Java doc
+The original Java example can be seen on the Java tab:
+
+![Java doc](images/script_java_doc.png)
 
 ## Documentation Guidelines
 
 Ideally, Ruboto code examples...
 
 * Consist entirely of valid Ruby code, with non-code text; comments, links, etc.. in comments ```#...``` or ```=begin;=end``` blocks.
-* Where possible, be directly equivalent to the corresponding Java code example to permit easy comparison of Java and Ruboto code.
+* Where possible, are directly equivalent to the corresponding Java code example to permit easy comparison of Java and Ruboto code.
 * Provide the simplest solution utilizing Ruboto best-practices (yes.. that's currently a moving target).
 * Where appropriate, provide relevant Ruboto coding alternatives.
 * May provide links in comments to Ruboto tutorials, code, explanations, etc.. relevant to the example.
