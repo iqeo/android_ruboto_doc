@@ -83,6 +83,7 @@ Ideally, Ruboto code examples...
 * Provide the simplest solution utilizing Ruboto best-practices (yes.. that's currently a moving target).
 * Where appropriate, provide relevant Ruboto coding alternatives.
 * May provide links in comments to Ruboto tutorials, code, explanations, etc.. relevant to the example.
+* Are _not_ copies of the Java example when the Ruboto example would be identical, instead consist of a comment ```# No changes required for Ruboto```.
 
 ## Documentation License
 
