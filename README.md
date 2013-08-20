@@ -71,8 +71,8 @@ The original Java example can be seen on the Java tab:
 > ![Java doc](images/script_java_doc.png)
 
 ## Wiki Pages
-All pages in the documentation are available at the [wiki](pages).  
-This document and link are accessible from the 'about' link above examples in context.
+All pages in the documentation are available at the [wiki](https://android-ruboto-doc.iqeo.net/pages).  
+This document and link are also accessible from the 'about' link above examples in context.
 
 ## Documentation Guidelines
 
