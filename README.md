@@ -13,11 +13,11 @@ This is a browser-based user-script implemented with the [GreaseMonkey](http://w
 0. Download the Android Ruboto Documentation [user-script](https://android-ruboto-doc.iqeo.net/android_ruboto_doc.user.js).
 0. Firefox will ask to confirm installation, click Install.
 
-## Updates
+## Update
 
 As this project develops it may be necessary to update the user-script. This is an automatic process, only requiring user confirmation when an update is available. The GreaseMonkey secure update protocol ensures that updates will only be installed from the original (SSL certificate authenticated) source at the project site https://android-ruboto-doc.iqeo.net.
 
-## Uninstallation
+## Removal
 
 0. Open the Firefox Add-Ons Manager (accessible from the Firefox menu).
 0. Select the GreaseMonkey User Scripts tab.
@@ -30,30 +30,49 @@ Browse to the Google Android developer documentation at http://developer.android
 
 ### Original examples
 
-With this script not installed or disabled, examples in the documentation are normally presented:
+With this script disabled or not installed, examples in the documentation are normally presented:
 
-![Before script](images/before_script.png)
+> ![Before script](images/before_script.png)
 
 ### Examples without Ruboto doc 
 With this script active, examples will look like this when there is no corresponding Ruboto example:
 
-![No doc](images/script_no_doc.png)
+> ![No doc](images/script_no_doc.png)
 
 Click the 'create' link to create a Ruboto example at the Android Ruboto Documentation wiki:
-Refresh the orginal developer.android.com page to see the newly created Ruboto example.
+
+> ![Create example](images/create_example.png)
+
+_Do not change the page title, this is required to associate with the original Java example._  
+Create the Ruboto example (see [documentation guidelines](#documentation-guidelines)) and save it:
+
+> ![Preview example](images/preview_example.png)
+
+Refresh the orginal developer.android.com page to see the newly created Ruboto example in context.
 
 ### Examples with Ruboto doc
 With this script active, Ruboto examples are presented on the Ruboto tab:
 
-![Ruboto doc](images/script_ruboto_doc.png)
+> ![Ruboto doc](images/script_ruboto_doc.png)
 
 Click the 'Edit' link to edit the Ruboto example at the Android Ruboto Documentation wiki:
-Refresh the orginal developer.android.com page to see the updated Ruboto example.
+> ![Edit example](images/edit_example.png)
+
+_Do not change the page title, this is required to associate with the original Java example._  
+Edit the Ruboto example (see [documentation guidelines](#documentation-guidelines)) and save it:
+
+> ![Preview example](images/preview_example.png)
+
+Refresh the orginal developer.android.com page to see the newly created Ruboto example in context.
 
 ### Original Java doc
 The original Java example can be seen on the Java tab:
 
-![Java doc](images/script_java_doc.png)
+> ![Java doc](images/script_java_doc.png)
+
+## Wiki Pages
+All pages in the documentation are available at the [wiki](pages).  
+This document and link are accessible from the 'about' link above examples in context.
 
 ## Documentation Guidelines
 
