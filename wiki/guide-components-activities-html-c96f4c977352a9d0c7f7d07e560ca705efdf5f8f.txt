@@ -1,0 +1,11 @@
+# Ruboto can start Java and Ruby based activities...
+
+# when activity is a Ruby class (subclass of RubotoActivity)
+start_ruboto_activity 'SigninActivity'
+
+# when activity is a Java class
+intent = android::content::Intent.new
+intent.setClassname $package_name, 'fully.qualified.classname.SigninActivity'
+startActivity intent
+
+# also see... http://github.com/ruboto/ruboto/wiki/Using-Activities-and-Intents
