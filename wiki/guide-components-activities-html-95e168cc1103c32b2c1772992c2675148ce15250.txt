@@ -1,4 +1,4 @@
-class ExampleActivity < RubotoActivity
+class ExampleActivity \< RubotoActivity
 
   def onCreate saved_instance_state
     super
