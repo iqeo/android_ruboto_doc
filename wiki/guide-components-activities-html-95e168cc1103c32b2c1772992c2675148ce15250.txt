@@ -1,0 +1,33 @@
+class ExampleActivity < RubotoActivity
+
+  def onCreate saved_instance_state
+    super
+    # The activity is being created.
+  end
+
+  def onStart
+    super
+    # The activity is about to become visible.
+  end
+
+  def onResume
+    super
+    # The activity has become visible (it is now "resumed").
+  end
+
+  def onPause
+    super
+    # Another activity is taking focus (this activity is about to be "paused").
+  end
+
+  def onStop
+    super
+    # The activity is no longer visible (it is now "stopped")
+  end
+
+  def onDestroy
+    super
+    # The activity is about to be destroyed.
+  end
+
+end
