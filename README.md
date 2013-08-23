@@ -5,6 +5,7 @@
 ## Description
 
 This is a browser-based user-script implemented with the [GreaseMonkey](http://www.greasespot.net/) Firefox add-on. Currently works with Firefox only, at this stage user-script incompatibilities prevent operation with Chrome.
+
 Source and docs on GitHub at https://github.com/iqeo/android_ruboto_doc.
 
 ## Installation
