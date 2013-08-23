@@ -80,18 +80,18 @@ This document and link are also accessible from the 'about' link above examples 
 
 Ideally, Ruboto code examples...
 
-* Consist entirely of valid Ruby code, with non-code text; comments, links, etc.. in comments ```#...``` or ```=begin;=end``` blocks.
+* Consist entirely of valid Ruby code, with non-code text; comments, links, etc.. in comments `#...` or `=begin;=end` blocks.
 * Where possible, are directly equivalent to the corresponding Java code example to permit easy comparison of Java and Ruboto code.
 * Provide the simplest solution utilizing Ruboto best-practices (yes.. that's currently a moving target).
 * Where appropriate, provide relevant Ruboto coding alternatives.
 * May provide links in comments to Ruboto tutorials, code, explanations, etc.. relevant to the example.
-* Are _not_ copies of the Java example when the Ruboto example would be identical, instead consist of a comment ```# No changes required for Ruboto```.
+* Are _not_ copies of the Java example when the Ruboto example would be identical, instead consist of a comment `# No changes required for Ruboto`.
 
 ## Documentation License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Contributed documentation</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
 
-If author attribution is desired, provide the author's name and/or email address in a comment ```#...``` at the end of the example.
+If author attribution is desired, provide the author's name and/or email address in a comment `#...` at the end of the example.
 
 ## Project License
 
