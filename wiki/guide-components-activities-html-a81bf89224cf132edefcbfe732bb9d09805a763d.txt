@@ -1,0 +1,3 @@
+intent = Intent.new Intent.ACTION_SEND
+intent.putExtra Intent.EXTRA_EMAIL, recipientArray
+startActivity intent
