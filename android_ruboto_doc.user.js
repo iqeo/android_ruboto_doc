@@ -2,7 +2,7 @@
 // @name        Android Ruboto Documentation
 // @description Ruboto code examples for Android developer documentation. Displayed in context while browsing http://developer.android.com.
 // @grant       GM_xmlhttpRequest
-// @version     0.4
+// @version     1.0
 // @namespace   https://android-ruboto-doc.iqeo.net
 // //@require-NOT     http://android-ruboto-doc.iqeo.net/android_ruboto_doc.functions.js
 // @icon        https://android-ruboto-doc.iqeo.net/images/icon.png
@@ -19,8 +19,6 @@
 
 /**
 
-  TODO: setup android-ruboto-doc.iqeo.net site via 'git clone'
-  TODO: set version number and announce
   TODO: fails in Chrome & TamperMonkey - response.context is undefined (can't read java_pre) at line 235)
   TODO: + context may only be a string now in Chrome ? - now need to pack and unpack values or serialize ?
   
