@@ -4,7 +4,7 @@
 start_ruboto_activity('SigninActivity')
 
 # when activity is a Java class
-intent = android::content::Intent.new
+intent = Intent.new
 intent.setClassname $package_name, 'fully.qualified.classname.SigninActivity'
 startActivity intent
 
