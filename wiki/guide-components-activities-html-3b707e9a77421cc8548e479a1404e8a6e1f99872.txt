@@ -5,4 +5,4 @@
   </intent-filter>
 </activity>
 
-<!-- excuting 'ruboto gen app' creates an AndroidManifest.xml file ready for use... -->
+<!-- 'ruboto gen app' creates an AndroidManifest.xml file ready for use... -->
