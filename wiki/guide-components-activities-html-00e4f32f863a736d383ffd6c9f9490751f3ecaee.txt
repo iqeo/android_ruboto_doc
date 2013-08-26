@@ -4,6 +4,7 @@ def pickContact
  startActivityForResult intent, PICK_CONTACT_REQUEST
 end
 
+
 def onActivityResult requestCode, resultCode, data
   # If the request went well (OK) and the request was PICK_CONTACT_REQUEST
   if resultCode == Activity.RESULT_OK && requestCode == PICK_CONTACT_REQUEST
