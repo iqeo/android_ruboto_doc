@@ -9,9 +9,10 @@ server {
   listen      80;
   listen      443 ssl;
 
-  location = /wiki  { return 301 /; }
-  location = /wiki/ { return 301 /; }
-  location   /.git/ { return 301 /; }
+  location ^~ /delete/ { return 301 /operation_disabled.html; }
+  location =  /wiki    { return 301 /; }
+  location =  /wiki/   { return 301 /; }
+  location    /.git/   { return 301 /; }
 	
   try_files $uri/index.html $uri @unicorn;
   location @unicorn {
