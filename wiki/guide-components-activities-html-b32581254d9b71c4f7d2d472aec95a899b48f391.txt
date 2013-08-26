@@ -1,5 +1,3 @@
-<!-- 'ruboto gen app ...' creates an AndroidManifest.xml file ready for use -->
-
 <manifest ... >
   <application ... >
     <activity android:name="ExampleActivity">
@@ -11,3 +9,5 @@
   </application>
   ...
 </manifest>
+
+<!-- 'ruboto gen app ...' creates an AndroidManifest.xml file ready for use -->
