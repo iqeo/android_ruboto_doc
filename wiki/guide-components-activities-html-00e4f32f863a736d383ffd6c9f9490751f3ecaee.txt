@@ -1,0 +1,19 @@
+def pickContact
+ # Create an intent to "pick" a contact, as defined by the content provider URI
+ intent = Intent.new Intent.ACTION_PICK, Contacts.CONTENT_URI
+ startActivityForResult intent, PICK_CONTACT_REQUEST
+end
+
+def onActivityResult requestCode, resultCode, data
+  # If the request went well (OK) and the request was PICK_CONTACT_REQUEST
+  if resultCode == Activity.RESULT_OK && requestCode == PICK_CONTACT_REQUEST
+    # Perform a query to the contact's content provider for the contact's name
+    cursor = getContentResolver.query( data.getData, Contacts.DISPLAY_NAME, nil, nil, nil)
+    #
+    if cursor.moveToFirst     # True if the cursor is not empty
+      columnIndex = cursor.getColumnIndex Contacts.DISPLAY_NAME
+      name = cursor.getString columnIndex
+      # Do something with the selected contact's name...
+    end
+  end
+end
