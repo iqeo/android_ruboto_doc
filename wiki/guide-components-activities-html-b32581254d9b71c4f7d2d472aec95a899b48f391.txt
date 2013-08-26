@@ -1,13 +1,13 @@
-<!-- excuting 'ruboto gen app' creates an AndroidManifest.xml file ready for use... -->
+<!-- 'ruboto gen app ...' creates an AndroidManifest.xml file ready for use -->
 
 <manifest ... >
   <application ... >
     <activity android:name="ExampleActivity">
     ...
     </activity>
-    <activity android:exported='false' android:name='org.ruboto.RubotoActivity'/>
-    <activity android:exported='false' android:name='org.ruboto.RubotoDialog' android:theme='@android:style/Theme.Dialog'/>
-    <service android:exported='false' android:name='org.ruboto.RubotoService'/>
+        <activity android:exported='false' android:name='org.ruboto.RubotoActivity'/>
+        <activity android:exported='false' android:name='org.ruboto.RubotoDialog' android:theme='@android:style/Theme.Dialog'/>
+        <service android:exported='false' android:name='org.ruboto.RubotoService'/>
   </application>
   ...
 </manifest>
