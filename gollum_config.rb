@@ -9,3 +9,5 @@ end
 
 # make plain text the default
 Precious::App.set(:default_markup, :txt)
+
+
