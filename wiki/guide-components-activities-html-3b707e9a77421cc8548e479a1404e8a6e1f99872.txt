@@ -1,6 +1,6 @@
 <!-- excuting 'ruboto gen app' creates an AndroidManifest.xml file ready for use... -->
 
-<activity android:label='@string/app_name' android:name='Route9Activity'>
+<activity android:label='@string/app_name' android:name='ExampleActivity'>
   <intent-filter>
     <action android:name='android.intent.action.MAIN'/>
     <category android:name='android.intent.category.LAUNCHER'/>
