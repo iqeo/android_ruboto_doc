@@ -10,8 +10,8 @@ def onActivityResult requestCode, resultCode, data
   if resultCode == Activity.RESULT_OK && requestCode == PICK_CONTACT_REQUEST
     # Perform a query to the contact's content provider for the contact's name
     cursor = getContentResolver.query( data.getData, Contacts.DISPLAY_NAME, nil, nil, nil)
-    #
-    if cursor.moveToFirst     # True if the cursor is not empty
+    
+    if cursor.moveToFirst       # True if the cursor is not empty
       columnIndex = cursor.getColumnIndex Contacts.DISPLAY_NAME
       name = cursor.getString columnIndex
       # Do something with the selected contact's name...
