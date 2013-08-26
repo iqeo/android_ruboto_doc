@@ -1,4 +1,4 @@
-# excuting 'ruboto gen app' creates an AndroidManifest.xml file ready for use...
+<!-- excuting 'ruboto gen app' creates an AndroidManifest.xml file ready for use... -->
 
 <manifest ... >
   <application ... >
